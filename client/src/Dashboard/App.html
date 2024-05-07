@@ -1,0 +1,139 @@
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forecasting System</title>
+  <style>
+      /* Some basic styling for demonstration purposes */
+      #searchInput {
+          padding: 10px;
+          font-size: 16px;
+          width: 300px;
+      }
+      #searchResults {
+          margin-top: 10px;
+      }
+  </style>
+</head>
+<body>
+  <form id="searchForm">
+    <input type="text" id="searchInput" placeholder="Search...">
+    <button type="submit">Search</button>
+  </form>
+  <ul id="searchResults"></ul>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Forecast</title>
+</head>
+<body>
+    <h1>Weather Forecast</h1>
+    <input type="text" id="locationInput" placeholder="Enter location">
+    <button id="searchButton">Search</button>
+    <div id="weatherInfo">
+        <p>Location: <span id="location"></span></p>
+        <p>Temperature: <span id="temperature"></span></p>
+        <p>Description: <span id="description"></span></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Signup & Signin</title>
+</head>
+<body>
+
+
+<script>
+// Signup Form Handling
+function handleSignup(event) {
+    event.preventDefault();
+    // Get signup form data
+    const formData = new FormData(event.target);
+    const signupData = Object.fromEntries(formData);
+    
+    // Send signup request to backend
+    fetch('/api/signup', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(signupData)
+    })
+    .then(response => {
+        if (response.ok) {
+            // Signup successful
+            console.log('Signup successful');
+        } else {
+            // Signup failed
+            console.error('Signup failed');
+        }
+    })
+    .catch(error => {
+        console.error('Signup error:', error);
+    });
+}
+
+// Signin Form Handling
+function handleSignin(event) {
+    event.preventDefault();
+    // Get signin form data
+    const formData = new FormData(event.target);
+    const signinData = Object.fromEntries(formData);
+    
+    // Send signin request to backend
+    fetch('/api/signin', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(signinData)
+    })
+    .then(response => {
+        if (response.ok) {
+            // Signin successful
+            console.log('Signin successful');
+        } else {
+            // Signin failed
+            console.error('Signin failed');
+        }
+    })
+    .catch(error => {
+        console.error('Signin error:', error);
+    });
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>Save Password in Console</title>
+</head>
+<body>
+<script>
+document.getElementById("togglePassword").addEventListener("click", function() {
+    var passwordInput = document.getElementById("inputChoosePassword");
+    console.log("Password Entered: " + passwordInput.value);
+});
+</script>
+
+</body>
+</html>
